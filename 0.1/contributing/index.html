@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Pure-Go, MRI-4.0.5-faithful Ruby sinatra (no cgo)">
+        <meta name="description" content="A pure-Go reimplementation of the deterministic core of Ruby's Sinatra — routing, patterns, params and dispatch, MRI-faithful, no cgo.">
       
       
       
         <link rel="canonical" href="https://go-ruby-sinatra.github.io/docs/0.1/contributing/">
       
       
-        <link rel="prev" href="../reference/">
+        <link rel="prev" href="../performance/">
       
       
       
@@ -307,11 +307,51 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Reference
+    Usage & API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
   </span>
   
 
@@ -477,20 +517,26 @@
 
 <h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h1>
 <p>Contributions are welcome. <code>go-ruby-sinatra/sinatra</code> is built to a small set of
-non-negotiable rules — they keep it pure-Go, correct, and reference-faithful.</p>
+non-negotiable rules — they are what keep it pure-Go, correct, and MRI-faithful.
+Please read these before opening a pull request.</p>
 <h2 id="hard-rules">Hard rules<a class="headerlink" href="#hard-rules" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Build from source — no vendoring.</strong> Everything compiles from source.</li>
+<li><strong>Build from source — no vendoring.</strong> Everything compiles from source. Being
+  able to compile from source is a guarantee of independence.</li>
 <li><strong>100% test coverage target, enforced in CI.</strong> New code ships with tests, and
   coverage is a CI gate. Fill the error branches, not just the happy path.</li>
-<li><strong>All GitHub content in English.</strong> Issues, pull requests, commits and comments
-  are English-only.</li>
-<li><strong>Differential testing against reference Ruby.</strong> Correctness is defined by
-  reference Ruby (MRI), compared rather than approximated from memory.</li>
+<li><strong>All GitHub content in English.</strong> Issues, pull requests, commits, comments,
+  and discussions are English-only.</li>
+<li><strong>Differential testing against the <code>sinatra</code> gem.</strong> Correctness is defined by
+  the reference gem. The same routes are compiled under both <code>ruby</code> + <code>sinatra</code>
+  and this library and the results compared byte-for-byte — not approximated from
+  memory.</li>
 <li><strong>Pure Go, cgo disabled.</strong> The whole point is a single static binary with no C
-  toolchain. Code must build with <code>CGO_ENABLED=0</code>.</li>
-<li><strong>A reusable library, not the interpreter.</strong> Anything that needs a live Ruby
-  binding belongs in the consumer (<code>rbgo</code>), not here.</li>
+  toolchain. Code must build with <code>CGO_ENABLED=0</code>. If a feature seems to need C,
+  it needs a pure-Go path instead.</li>
+<li><strong>The deterministic core, not the interpreter.</strong> This module implements
+  routing and dispatch. Anything that needs a live Ruby binding — action bodies,
+  templating, the session store — belongs in the consumer, not here.</li>
 </ul>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
 <ol>
@@ -508,8 +554,12 @@ non-negotiable rules — they keep it pure-Go, correct, and reference-faithful.<
 </li>
 </ol>
 <h2 id="where-things-live">Where things live<a class="headerlink" href="#where-things-live" title="Permanent link">&para;</a></h2>
-<p>The library is in <a href="https://github.com/go-ruby-sinatra/sinatra"><code>github.com/go-ruby-sinatra/sinatra</code></a>.
-This documentation site is in <a href="https://github.com/go-ruby-sinatra/docs"><code>github.com/go-ruby-sinatra/docs</code></a>.</p>
+<p>The library is in
+<a href="https://github.com/go-ruby-sinatra/sinatra"><code>github.com/go-ruby-sinatra/sinatra</code></a>.
+This documentation site is in
+<a href="https://github.com/go-ruby-sinatra/docs"><code>github.com/go-ruby-sinatra/docs</code></a>.
+Start from the <a href="../api/">Usage &amp; API</a> page and the <a href="../roadmap/">Roadmap</a> to find
+the right place for your change.</p>
 
 
 

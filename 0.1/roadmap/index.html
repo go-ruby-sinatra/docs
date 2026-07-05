@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-ruby-sinatra.github.io/docs/0.1/why/">
+        <link rel="canonical" href="https://go-ruby-sinatra.github.io/docs/0.1/roadmap/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../api/">
       
       
-        <link rel="next" href="../api/">
+        <link rel="next" href="../performance/">
       
       
       <link rel="icon" href="../assets/logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Why pure Go - go-ruby-sinatra docs</title>
+        <title>Roadmap - go-ruby-sinatra docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-pure-go" class="md-skip">
+        <a href="#roadmap" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Why pure Go
+              Roadmap
             
           </span>
         </div>
@@ -286,30 +286,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Why pure Go
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../why/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -318,53 +298,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-deterministic-and-what-is-a-seam" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is deterministic — and what is a seam
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#built-on-go-ruby-rack-bound-by-rbgo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Built on go-ruby-rack, bound by rbgo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-pure-go-matters-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why pure Go matters here
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -393,10 +326,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -405,6 +358,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documented-seams-and-out-of-scope-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documented seams and out-of-scope boundaries
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -476,27 +458,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-deterministic-and-what-is-a-seam" class="md-nav__link">
+  <a href="#documented-seams-and-out-of-scope-boundaries" class="md-nav__link">
     <span class="md-ellipsis">
-      What is deterministic — and what is a seam
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#built-on-go-ruby-rack-bound-by-rbgo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Built on go-ruby-rack, bound by rbgo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-pure-go-matters-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why pure Go matters here
+      Documented seams and out-of-scope boundaries
     </span>
   </a>
   
@@ -517,53 +481,73 @@
                   
 
 
-<h1 id="why-pure-go">Why pure Go<a class="headerlink" href="#why-pure-go" title="Permanent link">&para;</a></h1>
-<p><code>go-ruby-sinatra/sinatra</code> reimplements the <strong>routing and dispatch core</strong> of Ruby's
-Sinatra in <strong>pure Go, with cgo disabled</strong>. The slice of Sinatra it covers is
-<strong>deterministic and interpreter-independent</strong>: compiling a route pattern,
-extracting <code>params</code>, ordering the <code>before</code>/<code>after</code> filters and the <code>halt</code>/<code>pass</code>
-control flow are pure functions of their inputs — no live binding, no evaluation
-of arbitrary Ruby. That is exactly the part that can — and should — live as a
-standalone Go library, separate from the interpreter.</p>
-<h2 id="what-is-deterministic-and-what-is-a-seam">What is deterministic — and what is a seam<a class="headerlink" href="#what-is-deterministic-and-what-is-a-seam" title="Permanent link">&para;</a></h2>
-<p>Sinatra's request handling splits cleanly:</p>
+<h1 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h1>
+<p><code>go-ruby-sinatra/sinatra</code> is grown <strong>test-first</strong>, each capability differential-tested
+against the <code>sinatra</code> gem rather than built in isolation. The deterministic,
+interpreter-independent slice of Sinatra — routing and dispatch — is <strong>complete</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Routing table</td>
+<td>A per-verb route table — <code>Get</code>/<code>Post</code>/<code>Put</code>/<code>Delete</code>/<code>Patch</code>/<code>Options</code>/<code>Head</code> plus <code>Route</code> for arbitrary verbs — with first-match-wins ordering. <code>Get</code> also registers <code>HEAD</code>, exactly like Sinatra.</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>Pattern compiler</td>
+<td>Mustermann-style <code>"/hello/:name"</code> named captures, <code>*</code> splats, the optional trailing <code>?</code>, and raw regexp routes, compiled to an anchored <code>regexp</code> with Sinatra's exact <code>:name → [^/?#]+</code>, <code>:name? → (…)?</code>, <code>* → .*?</code> semantics; captures are URI-decoded.</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>Params merge</td>
+<td>Request query + form params seed <code>params</code>, then route captures override on collision via Sinatra's <code>v2 || v1</code> rule; splats accumulate into <code>params["splat"]</code> and regexp groups into <code>params["captures"]</code>.</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>Dispatch &amp; filters</td>
+<td><code>before</code>/<code>after</code> filters with their own patterns and capture merge, <code>halt</code>/<code>pass</code>/<code>redirect</code>/<code>status</code>/<code>content_type</code>/<code>headers</code>/<code>body</code>, and the <code>not_found</code>/<code>error(code)</code> handlers, producing the Rack <code>[status, headers, body]</code> tuple.</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>Helpers &amp; settings</td>
+<td><code>content_type</code> mime resolution with Sinatra's <code>add_charset</code> rule, <code>url</code>/<code>uri</code> resolution, conditional <code>halt</code>, and a <code>set</code>/<code>enable</code>/<code>disable</code> settings registry, built on <code>rack.Request</code>/<code>rack.Response</code>.</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>Differential oracle &amp; coverage</td>
+<td>The same routes compiled under the real <code>sinatra</code> gem (4.x) and compared byte-for-byte — route→params, filter order, <code>halt</code>/<code>pass</code>/<code>redirect</code>, <code>content_type</code> and the Rack tuple; 100% coverage, gofmt + go vet clean, green across all six 64-bit Go arches and three OSes.</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>Templating &amp; session</td>
+<td>ERB/Haml rendering, the session store, and the Ruby <code>do…end</code> action bodies.</td>
+<td><strong>Seam</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="documented-seams-and-out-of-scope-boundaries">Documented seams and out-of-scope boundaries<a class="headerlink" href="#documented-seams-and-out-of-scope-boundaries" title="Permanent link">&para;</a></h2>
+<p>These are <strong>deliberate</strong>, recorded so the module's surface is unambiguous:</p>
 <ul>
-<li><strong>Deterministic (here, pure Go).</strong> The per-verb route table, the
-  Mustermann-style pattern compiler, the <code>params</code> merge, the filter ordering, the
-  <code>halt</code>/<code>pass</code>/<code>redirect</code> control flow, <code>content_type</code> resolution, and the
-  assembly of the Rack <code>[status, headers, body]</code> tuple. Given a request, these
-  are a pure function of the registered routes.</li>
-<li><strong>Seams (the embedding runtime supplies).</strong> The route <strong>action bodies</strong> — the
-  Ruby <code>do…end</code> blocks — the <strong>session store</strong>, and <strong>template rendering</strong>
-  (ERB/Haml). A <code>sinatra.Action</code> (<code>func(*Context) any</code>) is where <code>rbgo</code> binds a
-  Ruby block; a Go caller supplies one directly.</li>
-<li><strong>Out of scope (the host's job).</strong> The HTTP server — the socket accept loop,
-  TLS, <code>Rack::Handler</code> — is the host's concern, exactly as it is for real
-  Sinatra on Rack.</li>
+<li><strong>The action bodies are a seam.</strong> A <code>sinatra.Action</code> (<code>func(*Context) any</code>) is
+  where the embedding runtime binds a Ruby <code>do…end</code> block; <code>rbgo</code> supplies it, a
+  Go caller supplies one directly. The library never runs arbitrary Ruby.</li>
+<li><strong>The session store is a seam.</strong> <code>c.Session()</code> exposes the <code>rack.session</code> env
+  value the host populates; this library only shapes access to it.</li>
+<li><strong>Templating is a seam.</strong> ERB/Haml rendering is not included — rbgo's ERB
+  compiler renders templates and feeds the result back as the action body.</li>
+<li><strong>The HTTP server is the host's job.</strong> The socket accept loop, TLS and
+  <code>Rack::Handler</code> are out of scope, exactly as for real Sinatra on Rack.</li>
+<li><strong>Reference is the <code>sinatra</code> gem (MRI).</strong> Byte-for-byte conformance targets the
+  reference gem's behaviour, pinned by the differential oracle.</li>
 </ul>
-<h2 id="built-on-go-ruby-rack-bound-by-rbgo">Built on go-ruby-rack, bound by rbgo<a class="headerlink" href="#built-on-go-ruby-rack-bound-by-rbgo" title="Permanent link">&para;</a></h2>
-<p>This library is built on <a href="https://github.com/go-ruby-rack/rack">go-ruby-rack</a> —
-the same layering the real Sinatra has on Rack — reusing <code>rack.Request</code> and
-<code>rack.Response</code>. It is <strong>bound into
-<a href="https://github.com/go-embedded-ruby/ruby">go-embedded-ruby</a>'s <code>rbgo</code></strong> as a
-native module (the same pattern as
-<a href="https://github.com/go-ruby-regexp">go-ruby-regexp</a>,
-<a href="https://github.com/go-ruby-erb">go-ruby-erb</a> and
-<a href="https://github.com/go-ruby-json">go-ruby-json</a>), rather than depending on the
-interpreter. The behaviour is pinned by a <strong>differential oracle</strong> against the
-system <code>ruby</code> + <code>sinatra</code> gem, independent of any one consumer.</p>
-<h2 id="why-pure-go-matters-here">Why pure Go matters here<a class="headerlink" href="#why-pure-go-matters-here" title="Permanent link">&para;</a></h2>
-<p>Because the library is CGO-free and dependency-light, it:</p>
-<ul>
-<li>cross-compiles to every Go target with no C toolchain, and links into a single
-  static binary;</li>
-<li>has <strong>no dependency on the Ruby runtime</strong> — the dependency runs the other way;</li>
-<li>can be differentially tested against the <code>sinatra</code> gem wherever <code>ruby</code> is on
-  <code>PATH</code>, while the cross-arch lanes (where <code>ruby</code> is absent) still validate the
-  library itself.</li>
-</ul>
-<p>See <a href="../api/">Usage &amp; API</a> for the surface and <a href="../roadmap/">Roadmap</a> for what is
-in scope.</p>
+<p>See <a href="../api/">Usage &amp; API</a> for the surface and <a href="../why/">Why pure Go</a> for the
+deterministic/seam split.</p>
 
 
 

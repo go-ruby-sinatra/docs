@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Pure-Go, MRI-4.0.5-faithful Ruby sinatra (no cgo)">
+        <meta name="description" content="A pure-Go reimplementation of the deterministic core of Ruby's Sinatra — routing, patterns, params and dispatch, MRI-faithful, no cgo.">
       
       
       
@@ -313,9 +313,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
+  <a href="#quick-taste" class="md-nav__link">
     <span class="md-ellipsis">
-      Install
+      Quick taste
     </span>
   </a>
   
@@ -383,11 +383,51 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/" class="md-nav__link">
+      <a href="api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Reference
+    Usage & API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
   </span>
   
 
@@ -443,9 +483,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
+  <a href="#quick-taste" class="md-nav__link">
     <span class="md-ellipsis">
-      Install
+      Quick taste
     </span>
   </a>
   
@@ -494,23 +534,33 @@
 
 
 <h1 id="go-ruby-sinatra-documentation">go-ruby-sinatra documentation<a class="headerlink" href="#go-ruby-sinatra-documentation" title="Permanent link">&para;</a></h1>
-<p><strong>Pure-Go, MRI-4.0.5-faithful Ruby sinatra (no cgo)</strong></p>
-<p><code>go-ruby-sinatra/sinatra</code> is a faithful, pure-Go (zero cgo) reimplementation of Ruby's <code>sinatra</code>,
-matching reference Ruby (MRI) behaviour. The module path is
+<p><strong>Ruby's Sinatra routing &amp; dispatch core in pure Go — MRI-faithful, no cgo.</strong></p>
+<p><code>go-ruby-sinatra/sinatra</code> is a faithful, pure-Go (zero cgo) reimplementation of the
+<strong>deterministic core of Ruby's <a href="https://github.com/sinatra/sinatra">Sinatra</a></strong> (4.x),
+matching the reference <code>sinatra</code> gem. The module path is
 <code>github.com/go-ruby-sinatra/sinatra</code>.</p>
-<p>It is a <strong>standalone, reusable</strong> library importable by any Go program, and the
-backend bound into <a href="https://github.com/go-embedded-ruby/ruby">go-embedded-ruby</a>
-by <code>rbgo</code> as a native module — the same pattern as
-<a href="https://github.com/go-ruby-yaml/yaml">go-ruby-yaml</a>. The dependency runs the
-other way: this library has <strong>no dependency on the Ruby runtime</strong>.</p>
+<p>It is built on <a href="https://github.com/go-ruby-rack/rack">go-ruby-rack</a>, reusing
+<code>rack.Request</code> to read the incoming environment and <code>rack.Response</code> to shape the
+outgoing <code>[status, headers, body]</code> tuple — the same layering the real Sinatra
+has on Rack. It is the Sinatra backend bound into
+<a href="https://github.com/go-embedded-ruby/ruby">go-embedded-ruby</a> by <code>rbgo</code> as a
+native module — just like <a href="https://github.com/go-ruby-regexp">go-ruby-regexp</a>,
+<a href="https://github.com/go-ruby-erb">go-ruby-erb</a> and
+<a href="https://github.com/go-ruby-json">go-ruby-json</a>. The dependency runs the other
+way: this library has <strong>no dependency on the Ruby runtime</strong>.</p>
 <div class="admonition success">
-<p class="admonition-title">Status: pure-Go, CGO=0, differential-tested</p>
-<p>A faithful pure-Go port of Ruby's <code>sinatra</code>, validated against reference Ruby, at 100%
-coverage, <code>gofmt</code> + <code>go vet</code> clean, CI green across the six 64-bit Go targets
-and three OSes.</p>
+<p class="admonition-title">Status: routing &amp; dispatch core complete — MRI-faithful</p>
+<p>The per-verb <strong>route table</strong> (<code>Get</code> also registers <code>HEAD</code>), the Mustermann-style <strong>pattern compiler</strong> (<code>:name</code> / <code>*</code> / <code>:name?</code> / raw regexp, anchored, URI-decoded captures), the <strong>params merge</strong> (query + form seeded, route captures override via <code>v2 || v1</code>), the <strong>dispatcher</strong> (<code>before</code>/<code>after</code> filters, <code>halt</code>/<code>pass</code>/<code>redirect</code>/<code>status</code>/<code>content_type</code>/<code>headers</code>/<code>body</code>, <code>not_found</code>/<code>error(code)</code>), and the Rack <code>[status, headers, body]</code> tuple. Validated by a <strong>differential oracle</strong> against the <code>sinatra</code> gem (4.x) at 100% coverage, <code>gofmt</code> + <code>go vet</code> clean, CI green across the six 64-bit Go targets and three OSes.</p>
 </div>
-<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/go-ruby-sinatra/sinatra
+<h2 id="quick-taste">Quick taste<a class="headerlink" href="#quick-taste" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">app</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">sinatra</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">app</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;/hello/:name&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">sinatra</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="kt">any</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">ParamString</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;!&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">})</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">status</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">CallTuple</span><span class="p">(</span><span class="nx">rack</span><span class="p">.</span><span class="nx">Env</span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nx">rack</span><span class="p">.</span><span class="nx">RequestMethod</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rack</span><span class="p">.</span><span class="nx">PathInfo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/hello/world&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nx">rack</span><span class="p">.</span><span class="nx">ServerName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rack</span><span class="p">.</span><span class="nx">ServerPort</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;9292&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rack</span><span class="p">.</span><span class="nx">RackURLScheme</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">})</span>
 </code></pre></div>
 <h2 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">&para;</a></h2>
 <table>
@@ -523,7 +573,7 @@ and three OSes.</p>
 <tbody>
 <tr>
 <td><a href="https://github.com/go-ruby-sinatra/sinatra"><code>sinatra</code></a></td>
-<td>the library — Ruby's <code>sinatra</code> in pure Go</td>
+<td>the library — Sinatra's routing &amp; dispatch core in pure Go</td>
 </tr>
 <tr>
 <td><a href="https://github.com/go-ruby-sinatra/docs"><code>docs</code></a></td>
@@ -543,17 +593,25 @@ and three OSes.</p>
 <ul>
 <li><strong>Pure Go, <code>CGO_ENABLED=0</code></strong> — trivial cross-compilation, a single static
   binary, no C toolchain.</li>
-<li><strong>Reference-faithful.</strong> Behaviour matches reference Ruby (MRI), validated by a
-  differential oracle rather than approximated.</li>
-<li><strong>Standalone &amp; reusable.</strong> No dependency on the Ruby runtime — the dependency
-  runs the other way; <code>rbgo</code> binds this module.</li>
-<li><strong>100% test coverage</strong> is the target, enforced as a CI gate, across 6 arches.</li>
+<li><strong>MRI-faithful.</strong> Behaviour matches the reference <code>sinatra</code> gem, validated by a
+  differential oracle against the <code>ruby</code> binary.</li>
+<li><strong>The deterministic core, not the interpreter.</strong> Route compilation, params
+  extraction, filter ordering and the <code>halt</code>/<code>pass</code> control flow are pure
+  functions; the action bodies, session store and templating are seams the
+  embedding runtime supplies.</li>
+<li><strong>Rack-based &amp; reusable.</strong> Built on go-ruby-rack; <code>rbgo</code> binds this module as a
+  native module — the dependency runs the other way.</li>
+<li><strong>100% test coverage</strong> is the target, enforced as a CI gate, across 6 arches
+  and 3 OSes.</li>
 </ul>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="why/">Why pure Go</a> — why this slice of Ruby lives as a standalone,
-  interpreter-independent Go library.</li>
-<li><a href="reference/">Reference</a> — install, import path and the API reference.</li>
+<li><a href="why/">Why pure Go</a> — why this slice of Sinatra is deterministic enough to
+  live as a standalone, interpreter-independent Go library.</li>
+<li><a href="api/">Usage &amp; API</a> — the public surface and worked examples.</li>
+<li><a href="roadmap/">Roadmap</a> — what is done and what is a seam by design.</li>
+<li><a href="performance/">Performance</a> — comparative benchmark vs the reference Ruby
+  runtimes.</li>
 </ul>
 <p>Source lives at <a href="https://github.com/go-ruby-sinatra/sinatra">github.com/go-ruby-sinatra/sinatra</a>.</p>
 
