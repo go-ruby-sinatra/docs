@@ -6,3 +6,5 @@ github.com/go-ruby-sinatra/sinatra v0.0.0-20260630133746-2c894e9d172c h1:zq73EWv
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260630133746-2c894e9d172c/go.mod h1:nuEOODfga3YvXINu2Ckvp/dNTTZlx+LUyjpWI+9TMck=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260820220259-f411364fd9cb h1:xejePTWYGJeOjUXfKJqEdScv2VNRsJjm4KBVjPu2slU=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260820220259-f411364fd9cb/go.mod h1:m/HIEbIDeF/rwGLN82nt8n53eX1Y/NK5uNkUrSm1im8=
+github.com/go-ruby-sinatra/sinatra v0.0.0-20260916102909-27d2245a08cd h1:cXK0I1foW8BOdzXGCgYNEmil6T6CxRWXT5keC0Ak9Q4=
+github.com/go-ruby-sinatra/sinatra v0.0.0-20260916102909-27d2245a08cd/go.mod h1:m/HIEbIDeF/rwGLN82nt8n53eX1Y/NK5uNkUrSm1im8=
