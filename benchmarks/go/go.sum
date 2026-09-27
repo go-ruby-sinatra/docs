@@ -2,9 +2,13 @@ github.com/go-ruby-rack/rack v0.0.0-20260630124607-8a4f9cfcdbb5 h1:8jrY0g3k1+Tbi
 github.com/go-ruby-rack/rack v0.0.0-20260630124607-8a4f9cfcdbb5/go.mod h1:rKZ3vD81gJq61NvZ3XX9cr6AxtIV3+lFZKG7lPKV3PM=
 github.com/go-ruby-rack/rack v0.0.0-20260717072552-0eeee2b1ab82 h1:1wUKvLYf43VJRrtqXOenHJ5bkBy+BBHU+b7PKXTQVkI=
 github.com/go-ruby-rack/rack v0.0.0-20260717072552-0eeee2b1ab82/go.mod h1:rKZ3vD81gJq61NvZ3XX9cr6AxtIV3+lFZKG7lPKV3PM=
+github.com/go-ruby-rack/rack v0.0.0-20260916101131-d86b924dd331 h1:r+OCRLteRUid3hfcrC5Tah3yUITFF9hrWygvIZoily4=
+github.com/go-ruby-rack/rack v0.0.0-20260916101131-d86b924dd331/go.mod h1:rKZ3vD81gJq61NvZ3XX9cr6AxtIV3+lFZKG7lPKV3PM=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260630133746-2c894e9d172c h1:zq73EWvSARNK2T1R0WC3jl+YH7g6TutOkWd1btI8fIU=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260630133746-2c894e9d172c/go.mod h1:nuEOODfga3YvXINu2Ckvp/dNTTZlx+LUyjpWI+9TMck=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260820220259-f411364fd9cb h1:xejePTWYGJeOjUXfKJqEdScv2VNRsJjm4KBVjPu2slU=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260820220259-f411364fd9cb/go.mod h1:m/HIEbIDeF/rwGLN82nt8n53eX1Y/NK5uNkUrSm1im8=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260916102909-27d2245a08cd h1:cXK0I1foW8BOdzXGCgYNEmil6T6CxRWXT5keC0Ak9Q4=
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260916102909-27d2245a08cd/go.mod h1:m/HIEbIDeF/rwGLN82nt8n53eX1Y/NK5uNkUrSm1im8=
+github.com/go-ruby-sinatra/sinatra v0.0.0-20260923204248-301a06b96ca0 h1:fWlFn8VVlk8EX+xDJkFKZPIZA8NGXVnIWja/biUWhC8=
+github.com/go-ruby-sinatra/sinatra v0.0.0-20260923204248-301a06b96ca0/go.mod h1:SkmmvxVArC0uaRey0s3WmydG5cUJe5b2mxtQ3A2qhDw=
